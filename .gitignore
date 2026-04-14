@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+Thumbs.db
+
+# Editors
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# Original photos
+*.HEIC

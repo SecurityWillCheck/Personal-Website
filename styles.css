@@ -1,0 +1,279 @@
+/* ═══════════════════════════════════════════════════
+   Alexander Wilczek — Personal Website
+   Shared styles across all pages
+   ═══════════════════════════════════════════════════ */
+
+/* ── Reset ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Custom Properties ── */
+:root {
+  /* Colors — see docs/STYLING.md for usage rules */
+  --color-primary: #111;         /* headings, names, conference titles, nav logo */
+  --color-body: #2a2a2a;         /* body text, paragraphs, bios, story content */
+  --color-secondary: #444;       /* talk titles, supporting text, nav links */
+  --color-muted: #5a5a5a;        /* dates, locations, labels, captions, footer — WCAG AA on all backgrounds */
+  --color-border: #ddd;          /* dividers, card borders, separators */
+  --color-surface: #f5f5f5;      /* card backgrounds, stat boxes */
+  --color-bg: #fff;              /* page background */
+
+  /* Upcoming talk cards (dark background variant) */
+  --color-upcoming-bg: #333;
+  --color-upcoming-hover: #3d3d3d;
+  --color-upcoming-text: #ccc;
+  --color-upcoming-muted: #aaa;
+
+  /* Legacy aliases — avoid in new code */
+  --black: var(--color-primary);
+  --white: var(--color-bg);
+  --gray-100: var(--color-surface);
+  --gray-200: var(--color-border);
+  --gray-400: var(--color-muted);
+  --gray-600: var(--color-secondary);
+
+  /* Typography */
+  --font: 'Roboto', sans-serif;
+
+  /* Layout */
+  --max-width: 760px;
+  --page-padding: 2rem;
+}
+
+/* ── Base ── */
+body {
+  font-family: var(--font);
+  background: var(--color-bg);
+  color: var(--color-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── Nav ── */
+.nav {
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  background: var(--color-bg);
+  z-index: 50;
+}
+
+.nav__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem var(--page-padding);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav__logo {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: -0.25px;
+}
+
+.nav__links {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav__links a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav__links a:hover,
+.nav__links a.active {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding: 2.5rem var(--page-padding);
+  border-top: 1px solid var(--color-border);
+  margin-top: 3rem;
+}
+
+.footer .socials {
+  margin-bottom: 1rem;
+}
+
+.footer__copy {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ── Newsletter Modal ── */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.is-open {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  position: relative;
+  background: var(--color-bg);
+  padding: 3rem 2.5rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--color-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.modal__close:hover {
+  color: var(--color-primary);
+}
+
+.modal__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.modal__desc {
+  font-size: 0.875rem;
+  color: var(--color-body);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modal__form {
+  display: flex;
+}
+
+.modal__input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border);
+  border-right: none;
+  background: var(--color-bg);
+  font-family: var(--font);
+  font-size: 0.875rem;
+  color: var(--color-body);
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.modal__input:focus {
+  border-color: var(--color-primary);
+}
+
+.modal__btn {
+  padding: 0.875rem 1.5rem;
+  background: var(--color-upcoming-bg);
+  color: var(--color-bg);
+  border: none;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.modal__btn:hover {
+  background: var(--color-upcoming-hover);
+}
+
+/* ── Section Title ── */
+.section-title {
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-muted);
+  margin-bottom: 3rem;
+}
+
+/* ── Divider ── */
+.divider {
+  width: 40px;
+  height: 1px;
+  background: var(--color-border);
+  margin: 0 auto;
+}
+
+/* ── Social Icons ── */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.socials a:hover { color: var(--color-primary); }
+
+.socials svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 1.5rem;
+  }
+
+  .nav__links { gap: 1rem; }
+
+  .nav__links a {
+    font-size: 0.75rem;
+  }
+
+}
