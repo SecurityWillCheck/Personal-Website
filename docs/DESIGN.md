@@ -4,7 +4,7 @@
 
 - **Name:** Alexander Wilczek
 - **Domain:** alexanderwilczek.com
-- **Focus:** Cybersecurity professional, public speaker, Web3/DeFi security
+- **Focus:** Cybersecurity professional, public speaker
 
 ## Visual Theme
 
