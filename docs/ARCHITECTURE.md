@@ -58,8 +58,8 @@ Minimal JS on `index.html` only — auto-moves upcoming talks to the past sectio
 ### Favicon & Open Graph
 
 All pages include:
-- `favicon-32.png` — browser tab icon
-- `favicon-180.png` — Apple touch icon
+- `favicon-32-v2.png` — browser tab icon
+- `favicon-180-v2.png` — Apple touch icon (filenames versioned to bust Google's favicon cache after an orientation fix)
 - `og-image.png` — Open Graph / Twitter Card image for link previews
 
 OG image URLs are relative and must be converted to absolute URLs when deploying with a custom domain.

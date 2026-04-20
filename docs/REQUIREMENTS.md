@@ -41,7 +41,7 @@ Lightweight personal website to showcase identity, social presence, speaking exp
 
 ### 6. Profile Photo & Branding
 - Profile photo: `images/IMG_1276.JPG`
-- Favicon: `images/favicon-32.png`, `images/favicon-180.png`
+- Favicon: `images/favicon-32-v2.png`, `images/favicon-180-v2.png`
 - OG image: `images/og-image.png` (for link previews)
 
 ### 7. Newsletter Signup — DEFERRED
