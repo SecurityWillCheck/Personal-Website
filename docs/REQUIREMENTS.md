@@ -19,7 +19,9 @@ Lightweight personal website to showcase identity, social presence, speaking exp
 - Upcoming talks with dark card styling, auto-moved to past when date passes
 - Past talks with embedded YouTube videos where available
 - Current entries:
-  - DEF CON Singapore (Apr 28–30, 2026) — Upcoming
+  - DEF CON Singapore Workshop (Apr 28, 2026) — Upcoming
+  - DEF CON Singapore (Apr 29, 2026) — Upcoming
+  - CRESTCon (May 13, 2026) — Upcoming
   - BSides Melbourne (May 16–17, 2026) — Upcoming
   - BSides Canberra (Sep 2025) — Dark Web & Cybercrime Operations
   - NextGenius Sydney (Mar 2025) — Traditional Cyber Security vs Web3 Security

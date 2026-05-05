@@ -144,16 +144,19 @@
     .talk--upcoming .talk__title { color: var(--color-upcoming-text); }
     .talk--upcoming .talk__location { color: var(--color-upcoming-muted); }
 
-    /* ── Video Embed ── */
-    .talk__video {
+    /* ── Media (video/image/carousel) ── */
+    .talk__video,
+    .talk__media {
       margin-top: 1.5rem;
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
+      background: var(--color-surface);
     }
 
-    .talk__video iframe {
+    .talk__video iframe,
+    .talk__media > img {
       position: absolute;
       top: 0;
       left: 0;
@@ -161,6 +164,60 @@
       height: 100%;
       border: none;
     }
+
+    .talk__media > img {
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ── Carousel ── */
+    .talk__carousel {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .talk__carousel::-webkit-scrollbar { display: none; }
+
+    .talk__slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      position: relative;
+      background: var(--color-surface);
+    }
+
+    .talk__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .talk__carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.55);
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease;
+      z-index: 2;
+    }
+    .talk__carousel-btn:hover { background: rgba(17, 17, 17, 0.8); }
+    .talk__carousel-btn--prev { left: 0.5rem; }
+    .talk__carousel-btn--next { right: 0.5rem; }
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
@@ -204,7 +261,7 @@
         </a>
       </li>
       <li>
-        <a href="https://www.youtube.com/@Alexander-Wilczek" target="_blank" rel="noopener">
+        <a href="https://www.youtube.com/@Alexander-Wilczek/shorts" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           YouTube
         </a>
@@ -235,28 +292,49 @@
     </div>
 
     <div id="upcoming-talks">
-      <article class="talk talk--upcoming" data-date="2026-04-30">
-        <div class="talk__top">
-          <h3 class="talk__conference">DEF CON Singapore</h3>
-          <span class="talk__date">Apr 28–30, 2026</span>
-        </div>
-        <p class="talk__title">Tracing Cybercriminal Financial Operations</p>
-        <p class="talk__location">Singapore</p>
-      </article>
-
-      <article class="talk talk--upcoming" data-date="2026-04-30">
+      <article class="talk talk--upcoming" data-date="2026-04-28">
         <div class="talk__top">
           <h3 class="talk__conference">DEF CON Singapore Workshop</h3>
-          <span class="talk__date">Apr 28–30, 2026</span>
+          <span class="talk__date">Apr 28, 2026</span>
         </div>
         <p class="talk__title">Tracing Cybercriminal Financial Operations</p>
         <p class="talk__location">Singapore</p>
+        <div class="talk__media">
+          <div class="talk__carousel" data-carousel>
+            <div class="talk__slide"><img src="images/talks/defcon-sg-2026-workshop-1.jpg" alt="Presenting at the DEF CON Singapore workshop with participants seated and slides projected." loading="lazy"></div>
+            <div class="talk__slide"><img src="images/talks/defcon-sg-2026-workshop-2.jpg" alt="Working one-on-one with workshop participants at the DEF CON Singapore workshop." loading="lazy"></div>
+            <div class="talk__slide"><img src="images/talks/defcon-sg-2026-workshop-3.jpg" alt="Helping a participant at a desk with the DEF CON logo visible in the background." loading="lazy"></div>
+          </div>
+          <button type="button" class="talk__carousel-btn talk__carousel-btn--prev" aria-label="Previous image" data-carousel-prev>‹</button>
+          <button type="button" class="talk__carousel-btn talk__carousel-btn--next" aria-label="Next image" data-carousel-next>›</button>
+        </div>
       </article>
 
-      <article class="talk talk--upcoming" data-date="2026-05-17">
+      <article class="talk talk--upcoming" data-date="2026-04-29">
+        <div class="talk__top">
+          <h3 class="talk__conference">DEF CON Singapore</h3>
+          <span class="talk__date">Apr 29, 2026</span>
+        </div>
+        <p class="talk__title">Tracing Cybercriminal Financial Operations</p>
+        <p class="talk__location">Singapore</p>
+        <div class="talk__media">
+          <img src="images/talks/defcon-sg-2026-talk.jpg" alt="Speaking at the DEF CON Singapore Creator Stage on tracing cybercriminal financial operations." loading="lazy">
+        </div>
+      </article>
+
+      <article class="talk talk--upcoming" data-date="2026-05-13">
+        <div class="talk__top">
+          <h3 class="talk__conference">CRESTCon</h3>
+          <span class="talk__date">May 13, 2026</span>
+        </div>
+        <p class="talk__title">How Threat Actors Move Money and What That Tells Us About Them</p>
+        <p class="talk__location">Sydney, Australia</p>
+      </article>
+
+      <article class="talk talk--upcoming" data-date="2026-05-16">
         <div class="talk__top">
           <h3 class="talk__conference">BSides Melbourne</h3>
-          <span class="talk__date">May 16–17, 2026</span>
+          <span class="talk__date">May 16, 2026</span>
         </div>
         <p class="talk__title">The Cybercrime Money Pipeline</p>
         <p class="talk__location">Melbourne, Australia</p>
@@ -335,7 +413,7 @@
     <ul class="socials">
       <li><a href="https://www.linkedin.com/in/alexander-wilczek/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a></li>
       <li><a href="https://twitter.com/SecWillCheck" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</a></li>
-      <li><a href="https://www.youtube.com/@Alexander-Wilczek" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a></li>
+      <li><a href="https://www.youtube.com/@Alexander-Wilczek/shorts" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> YouTube</a></li>
       <li><a href="https://github.com/SecurityWillCheck" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg> GitHub</a></li>
       <li><a href="https://rivanorth.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg> Rivanorth</a></li>
     </ul>
@@ -379,6 +457,19 @@
         pastHeader.style.display = 'none';
         pastContainer.style.display = 'none';
       }
+
+      var carousels = document.querySelectorAll('[data-carousel]');
+      carousels.forEach(function (carousel) {
+        var media = carousel.parentElement;
+        var prev = media.querySelector('[data-carousel-prev]');
+        var next = media.querySelector('[data-carousel-next]');
+        if (prev) prev.addEventListener('click', function () {
+          carousel.scrollBy({ left: -carousel.clientWidth, behavior: 'smooth' });
+        });
+        if (next) next.addEventListener('click', function () {
+          carousel.scrollBy({ left: carousel.clientWidth, behavior: 'smooth' });
+        });
+      });
     })();
   </script>
 
