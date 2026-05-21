@@ -118,7 +118,10 @@
 
   <nav class="nav"><div class="nav__inner">
     <a href="index.html" class="nav__logo">Alexander Wilczek</a>
-    <ul class="nav__links">
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="var l=document.getElementById('nav-links');var o=l.classList.toggle('is-open');this.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o);return false;">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
       <li><a href="index.html#speaking">Speaking</a></li>
       <li><a href="digital-nomad.html">Digital Nomad</a></li>
       <li><a href="my-story.html">My Story</a></li>
