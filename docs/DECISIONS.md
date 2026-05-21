@@ -87,3 +87,11 @@ A record of key decisions made during planning, and the reasoning behind each.
 **Decision:** All text colors must pass WCAG AA contrast ratio (4.5:1 for normal text, 3:1 for large text) on all background states.
 
 **Why:** Accessibility is non-negotiable. The muted color was adjusted from `#888` to `#5a5a5a` to pass AA on white, surface, and hover backgrounds. Full contrast audit documented in [STYLING.md](./STYLING.md).
+
+---
+
+### 11. Burger menu on mobile (≤768px)
+
+**Decision:** Collapse the horizontal nav into a hamburger button below 768px. The full link list is replaced by a button that toggles a vertical dropdown beneath the nav bar.
+
+**Why:** The five nav links wrapped or crowded the logo on narrow screens, looking convoluted. A burger reveals a tidy, full-width dropdown only when needed. Implementation is a tiny inline `onclick` toggle (no shared JS file) keeping the static-site simplicity. Includes `aria-expanded`, `aria-controls`, and `aria-label` for accessibility.

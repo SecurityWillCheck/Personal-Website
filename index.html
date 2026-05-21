@@ -234,7 +234,10 @@
 
   <nav class="nav"><div class="nav__inner">
     <a href="index.html" class="nav__logo">Alexander Wilczek</a>
-    <ul class="nav__links">
+    <button class="nav__burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links" onclick="var l=document.getElementById('nav-links');var o=l.classList.toggle('is-open');this.classList.toggle('is-open',o);this.setAttribute('aria-expanded',o);return false;">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="nav-links">
       <li><a href="index.html#speaking">Speaking</a></li>
       <li><a href="digital-nomad.html">Digital Nomad</a></li>
       <li><a href="my-story.html">My Story</a></li>
@@ -329,6 +332,9 @@
         </div>
         <p class="talk__title">How Threat Actors Move Money and What That Tells Us About Them</p>
         <p class="talk__location">Sydney, Australia</p>
+        <div class="talk__media">
+          <img src="images/talks/crestcon-2026-talk.jpg" alt="Speaking at CRESTCon 2026 in Sydney." loading="lazy">
+        </div>
       </article>
 
       <article class="talk talk--upcoming" data-date="2026-05-16">
@@ -338,6 +344,15 @@
         </div>
         <p class="talk__title">The Cybercrime Money Pipeline</p>
         <p class="talk__location">Melbourne, Australia</p>
+        <div class="talk__media">
+          <div class="talk__carousel" data-carousel>
+            <div class="talk__slide"><img src="images/talks/bsides-melbourne-2026-1.jpg" alt="Speaking at BSides Melbourne 2026." loading="lazy"></div>
+            <div class="talk__slide"><img src="images/talks/bsides-melbourne-2026-2.jpg" alt="Speaking at BSides Melbourne 2026." loading="lazy"></div>
+            <div class="talk__slide"><img src="images/talks/bsides-melbourne-2026-3.jpg" alt="Speaking at BSides Melbourne 2026." loading="lazy"></div>
+          </div>
+          <button type="button" class="talk__carousel-btn talk__carousel-btn--prev" aria-label="Previous image" data-carousel-prev>‹</button>
+          <button type="button" class="talk__carousel-btn talk__carousel-btn--next" aria-label="Next image" data-carousel-next>›</button>
+        </div>
       </article>
     </div>
 
