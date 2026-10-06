@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alexander Wilczek</title>
-  <meta name="description" content="Alexander Wilczek is a seasoned cybersecurity expert, global speaker, and digital nomad specialising in dark web, cybercrime and AI security.">
+  <meta name="description" content="Alexander Wilczek is a seasoned cybersecurity expert, global speaker, and digital nomad specialising in dark web, data leaks and cybercrime.">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32-v2.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180-v2.png">
   <meta property="og:title" content="Alexander Wilczek">
-  <meta property="og:description" content="Alexander Wilczek is a seasoned cybersecurity expert, global speaker, and digital nomad specialising in dark web, cybercrime and AI security.">
+  <meta property="og:description" content="Alexander Wilczek is a seasoned cybersecurity expert, global speaker, and digital nomad specialising in dark web, data leaks and cybercrime.">
   <meta property="og:image" content="https://alexanderwilczek.com/images/og-image.png">
   <meta property="og:url" content="https://alexanderwilczek.com/">
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://alexanderwilczek.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Alexander Wilczek">
-  <meta name="twitter:description" content="Alexander Wilczek is a seasoned cybersecurity expert, global speaker, and digital nomad specialising in dark web, cybercrime and AI security.">
+  <meta name="twitter:description" content="Alexander Wilczek is a seasoned cybersecurity expert, global speaker, and digital nomad specialising in dark web, data leaks and cybercrime.">
   <meta name="twitter:image" content="https://alexanderwilczek.com/images/og-image.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -169,6 +169,43 @@
       object-fit: contain;
       display: block;
     }
+
+    /* ── Video facade (poster + play, iframe loads on click) ── */
+    .talk__play {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+      display: block;
+    }
+    .talk__play img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .talk__play::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 4rem;
+      height: 4rem;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(17, 17, 17, 0.7) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E") center / 2rem no-repeat;
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+    .talk__play:hover::after,
+    .talk__play:focus-visible::after {
+      background-color: rgba(17, 17, 17, 0.9);
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+    .talk__play:focus-visible { outline: 2px solid var(--color-text); outline-offset: -2px; }
 
     /* ── Carousel ── */
     .talk__carousel {
@@ -332,7 +369,7 @@
   <section class="hero">
     <img src="images/IMG_1276.JPG" alt="Alexander Wilczek" class="hero__photo">
     <h1 class="hero__name">Alexander Wilczek</h1>
-    <p class="hero__bio">Hey I'm Alex, a digital nomad fighting cybercrime. I've been travelling Australia (and the world) full time for over three years in my Landcruiser and hacking the planet from the most pristine beaches to the most remote parts of the outback. I specialise in dark web, cybercrime and AI security. I'm also the proud founder of Rivanorth.</p>
+    <p class="hero__bio">Hey I'm Alex, a digital nomad fighting cybercrime. I've been travelling Australia and the world full time for over three years in my Land Cruiser and hacking the planet from the most pristine beaches to the most remote parts of the outback. I specialise in dark web, data leaks and cybercrime. I'm also the proud founder of Rivanorth.</p>
     <ul class="hero__socials socials">
       <li>
         <a href="https://www.linkedin.com/in/alexander-wilczek/" target="_blank" rel="noopener">
@@ -443,8 +480,10 @@
         </div>
         <p class="talk__title">Tracing Cybercriminal Financial Operations</p>
         <p class="talk__location">Singapore</p>
-        <div class="talk__media">
-          <img src="images/talks/defcon-sg-2026-talk.jpg" alt="Speaking at the DEF CON Singapore Creator Stage on tracing cybercriminal financial operations." loading="lazy">
+        <div class="talk__video">
+          <button type="button" class="talk__play" data-video-id="XTAwy2f24dA" data-video-title="DEF CON Singapore — Tracing Cybercriminal Financial Operations" aria-label="Play video: Tracing Cybercriminal Financial Operations at DEF CON Singapore">
+            <img src="images/talks/defcon-sg-2026-talk.jpg" alt="Speaking at the DEF CON Singapore Creator Stage on tracing cybercriminal financial operations." loading="lazy">
+          </button>
         </div>
       </article>
 
@@ -617,6 +656,21 @@
         upcomingHeader.style.display = 'none';
         upcomingContainer.style.display = 'none';
       }
+
+      var players = document.querySelectorAll('.talk__play[data-video-id]');
+      players.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-video-id');
+          if (!/^[\w-]{11}$/.test(id)) return;
+          var iframe = document.createElement('iframe');
+          iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+          iframe.title = btn.getAttribute('data-video-title') || 'Video';
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+          iframe.setAttribute('allowfullscreen', '');
+          btn.replaceWith(iframe);
+          iframe.focus();
+        });
+      });
 
       var carousels = document.querySelectorAll('[data-carousel]');
       carousels.forEach(function (carousel) {
