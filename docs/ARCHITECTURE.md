@@ -43,6 +43,7 @@ contact.html        — Contact form (Formspree) + social links
 styles.css          — Shared CSS (tokens, nav, footer, socials, utilities)
 images/             — Photos, favicon, OG image
 docs/               — Project documentation
+.conductor/         — Conductor run script (serves the site on $CONDUCTOR_PORT via python3 http.server)
 ```
 
 Each HTML page links the shared `styles.css` first, then adds page-specific styles in a `<style>` block in the `<head>`.

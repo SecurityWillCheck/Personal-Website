@@ -13,3 +13,6 @@ Thumbs.db
 
 # Original photos
 *.HEIC
+
+# Conductor (machine-local)
+.conductor/settings.local.toml
