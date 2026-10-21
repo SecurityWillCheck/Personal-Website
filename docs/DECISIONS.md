@@ -95,3 +95,13 @@ A record of key decisions made during planning, and the reasoning behind each.
 **Decision:** Collapse the horizontal nav into a hamburger button below 768px. The full link list is replaced by a button that toggles a vertical dropdown beneath the nav bar.
 
 **Why:** The five nav links wrapped or crowded the logo on narrow screens, looking convoluted. A burger reveals a tidy, full-width dropdown only when needed. Implementation is a tiny inline `onclick` toggle (no shared JS file) keeping the static-site simplicity. Includes `aria-expanded`, `aria-controls`, and `aria-label` for accessibility.
+
+---
+
+### 12. "Featured In" lives on the home page, not a separate page
+
+**Decision:** External appearances (guest posts, podcasts) are listed in a `#featured` section on `index.html` directly below Speaking, reusing the talk card styling. Each card is a single `<a class="talk talk--link">` so the whole card is the link (opens in a new tab with `rel="noopener"`). Nav label is "Featured" (section heading "Featured In").
+
+**Why:** With only a handful of entries a dedicated page would be thin and add a navigation hop. Reusing the talk card keeps one visual language for "things I did". Revisit and split into its own page once the list passes roughly eight entries.
+
+**Photos:** Talk photos are resized to a 1600px long edge and re-encoded with EXIF/GPS metadata stripped before being committed to `images/talks/`.

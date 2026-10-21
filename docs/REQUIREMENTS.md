@@ -20,9 +20,9 @@ Lightweight personal website to showcase identity, social presence, speaking exp
 - Past talks with embedded YouTube videos where available
 - Current entries:
   - BSides Perth (Nov 13, 2026) — Upcoming — Dumpster Diving for AI Agent Data Leaks
-  - CyberCon Melbourne (Oct 14, 2026) — Upcoming — Tracking Third-Party Data Theft Across the Dark Web
-  - CyberCon Melbourne (Oct 15, 2026) — Upcoming — How AI Agents Are Leaking Your Secrets
-  - CyberCon Melbourne (Oct 16, 2026) — Upcoming — Cybercrime Revenue Streams and Money Laundering Techniques
+  - AISA CyberCon Melbourne (Oct 16, 2026) — Cybercrime Revenue Streams and Money Laundering Techniques (photo)
+  - AISA CyberCon Melbourne (Oct 15, 2026) — How AI Agents Are Leaking Your Secrets (photo)
+  - AISA CyberCon Melbourne (Oct 14, 2026) — Tracking Third-Party Data Theft Across the Dark Web (photo)
   - DEF CON Singapore Workshop (Apr 28, 2026) — Upcoming
   - DEF CON Singapore (Apr 29, 2026) — Upcoming
   - CRESTCon (May 13, 2026) — Upcoming
@@ -33,6 +33,12 @@ Lightweight personal website to showcase identity, social presence, speaking exp
   - ETH Global Sydney (May 2024) — Mentor
   - ETH Sydney (May 2024) — Q1 Security Report
   - Australian DeFi Association Melbourne (Feb 2024) — Operational Security (OpSec)
+
+### 2b. Featured In
+- External appearances listed on the home page below Speaking (`#featured`), whole card links out
+- Current entries:
+  - Exploit Security — "Three Years on the Road" (guest post, Oct 2026)
+  - SecTools Podcast / Infosec Campus — "BreachClaw" (podcast, Oct 2026)
 
 ### 3. Digital Nomad Gallery
 - Travel photo gallery with captioned section dividers

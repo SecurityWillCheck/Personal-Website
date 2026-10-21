@@ -36,7 +36,7 @@
 ## Site Structure
 
 ```
-index.html          — Home: hero (photo, bio, socials) + speaking section
+index.html          — Home: hero (photo, bio, socials) + speaking section + featured-in section
 digital-nomad.html  — Travel photo gallery with captioned dividers
 my-story.html       — Career stats + backstory
 contact.html        — Contact form (Formspree) + social links
@@ -49,7 +49,7 @@ Each HTML page links the shared `styles.css` first, then adds page-specific styl
 
 ### Navigation
 
-All pages share a consistent nav bar: `Speaking | Digital Nomad | My Story | Contact`. The nav uses a full-width border with content constrained to `--max-width`.
+All pages share a consistent nav bar: `Speaking | Featured | Digital Nomad | My Story | Contact | Newsletter`. Nav links are `white-space: nowrap` so the row never wraps at desktop widths. The nav uses a full-width border with content constrained to `--max-width`.
 
 ### JavaScript
 

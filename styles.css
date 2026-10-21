@@ -75,11 +75,12 @@ img { display: block; max-width: 100%; }
   color: var(--color-primary);
   text-decoration: none;
   letter-spacing: -0.25px;
+  white-space: nowrap;
 }
 
 .nav__links {
   display: flex;
-  gap: 2.25rem;
+  gap: 1.75rem;
   list-style: none;
 }
 
@@ -88,6 +89,7 @@ img { display: block; max-width: 100%; }
   color: var(--color-secondary);
   font-size: 0.9375rem;
   font-weight: 400;
+  white-space: nowrap;
   transition: color 0.2s;
 }
 

@@ -16,7 +16,7 @@
 
 ## Pages
 
-1. **Home (`index.html`)** — hero (photo, name, bio, social links) + speaking section (upcoming/past with embedded YouTube)
+1. **Home (`index.html`)** — hero (photo, name, bio, social links) + speaking section (upcoming/past with embedded YouTube) + Featured In section (guest posts, podcasts; whole card links out)
 2. **Digital Nomad (`digital-nomad.html`)** — travel photo gallery with captioned dividers + setup video
 3. **My Story (`my-story.html`)** — quick stats + career backstory
 4. **Contact (`contact.html`)** — contact form (Formspree) + social links in footer

@@ -54,8 +54,9 @@
       margin-top: 2rem;
     }
 
-    /* ── Speaking Section ── */
-    .speaking {
+    /* ── Speaking / Featured In Sections ── */
+    .speaking,
+    .featured {
       max-width: var(--max-width);
       margin: 0 auto;
       padding: 3rem var(--page-padding) 4rem;
@@ -131,6 +132,14 @@
       font-weight: 400;
       margin-top: 0.25rem;
     }
+
+    /* ── Link card (whole card is the link) ── */
+    .talk--link {
+      display: block;
+      text-decoration: none;
+    }
+    .talk--link:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+    .talk--link .talk__title { text-decoration: underline; text-underline-offset: 3px; }
 
     /* ── Upcoming Talk ── */
     .talk--upcoming {
@@ -359,6 +368,7 @@
     </button>
     <ul class="nav__links" id="nav-links">
       <li><a href="index.html#speaking">Speaking</a></li>
+      <li><a href="index.html#featured">Featured</a></li>
       <li><a href="digital-nomad.html">Digital Nomad</a></li>
       <li><a href="my-story.html">My Story</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -430,33 +440,6 @@
 
     <div id="upcoming-talks">
       <!-- Future upcoming talks go here. Add data-highlight="true" to route to Highlights once past. -->
-      <article class="talk talk--upcoming" data-date="2026-10-14">
-        <div class="talk__top">
-          <h3 class="talk__conference">CyberCon</h3>
-          <span class="talk__date">Oct 14, 2026</span>
-        </div>
-        <p class="talk__title">Tracking Third-Party Data Theft Across the Dark Web</p>
-        <p class="talk__location">Melbourne, Australia</p>
-      </article>
-
-      <article class="talk talk--upcoming" data-date="2026-10-15">
-        <div class="talk__top">
-          <h3 class="talk__conference">CyberCon</h3>
-          <span class="talk__date">Oct 15, 2026</span>
-        </div>
-        <p class="talk__title">How AI Agents Are Leaking Your Secrets</p>
-        <p class="talk__location">Melbourne, Australia</p>
-      </article>
-
-      <article class="talk talk--upcoming" data-date="2026-10-16">
-        <div class="talk__top">
-          <h3 class="talk__conference">CyberCon</h3>
-          <span class="talk__date">Oct 16, 2026</span>
-        </div>
-        <p class="talk__title">Cybercrime Revenue Streams and Money Laundering Techniques</p>
-        <p class="talk__location">Melbourne, Australia</p>
-      </article>
-
       <article class="talk talk--upcoming" data-date="2026-11-13">
         <div class="talk__top">
           <h3 class="talk__conference">BSides Perth</h3>
@@ -528,6 +511,42 @@
     </div>
 
     <div id="other-talks">
+      <article class="talk" data-date="2026-10-16">
+        <div class="talk__top">
+          <h3 class="talk__conference">AISA CyberCon</h3>
+          <span class="talk__date">Oct 2026</span>
+        </div>
+        <p class="talk__title">Cybercrime Revenue Streams and Money Laundering Techniques</p>
+        <p class="talk__location">Melbourne, Australia</p>
+        <div class="talk__media">
+          <img src="images/talks/cybercon-2026-cybercrime.jpg" alt="Speaking at AISA CyberCon 2026 in Melbourne on cybercrime revenue streams." loading="lazy">
+        </div>
+      </article>
+
+      <article class="talk" data-date="2026-10-15">
+        <div class="talk__top">
+          <h3 class="talk__conference">AISA CyberCon</h3>
+          <span class="talk__date">Oct 2026</span>
+        </div>
+        <p class="talk__title">How AI Agents Are Leaking Your Secrets</p>
+        <p class="talk__location">Melbourne, Australia</p>
+        <div class="talk__media">
+          <img src="images/talks/cybercon-2026-ai-agents.jpg" alt="Speaking at AISA CyberCon 2026 in Melbourne on AI agents leaking secrets." loading="lazy">
+        </div>
+      </article>
+
+      <article class="talk" data-date="2026-10-14">
+        <div class="talk__top">
+          <h3 class="talk__conference">AISA CyberCon</h3>
+          <span class="talk__date">Oct 2026</span>
+        </div>
+        <p class="talk__title">Tracking Third-Party Data Theft Across the Dark Web</p>
+        <p class="talk__location">Melbourne, Australia</p>
+        <div class="talk__media">
+          <img src="images/talks/cybercon-2026-dark-web.jpg" alt="Speaking at AISA CyberCon 2026 in Melbourne on tracking third-party data theft." loading="lazy">
+        </div>
+      </article>
+
       <article class="talk" data-date="2026-05-16">
         <div class="talk__top">
           <h3 class="talk__conference">BSides Melbourne</h3>
@@ -609,6 +628,30 @@
           <iframe src="https://www.youtube.com/embed/r607BXUdjS4?start=745" title="Australian DeFi Association — Operational Security (OpSec)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section class="featured" id="featured">
+    <h2 class="section-title">Featured In</h2>
+
+    <div id="features">
+      <a class="talk talk--link" href="https://www.exploitsecurity.io/post/three-years-on-the-road" target="_blank" rel="noopener" data-date="2026-10-21">
+        <div class="talk__top">
+          <h3 class="talk__conference">Exploit Security</h3>
+          <span class="talk__date">Oct 2026</span>
+        </div>
+        <p class="talk__title">Three Years on the Road</p>
+        <p class="talk__location">Guest post · The Exploit Society</p>
+      </a>
+
+      <a class="talk talk--link" href="https://infoseccampus.com/podcast/sectools-e58-breahclaw/" target="_blank" rel="noopener" data-date="2026-10-11">
+        <div class="talk__top">
+          <h3 class="talk__conference">SecTools Podcast</h3>
+          <span class="talk__date">Oct 2026</span>
+        </div>
+        <p class="talk__title">BreachClaw</p>
+        <p class="talk__location">Podcast · Infosec Campus</p>
+      </a>
     </div>
   </section>
 
