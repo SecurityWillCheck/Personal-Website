@@ -19,6 +19,7 @@ Lightweight personal website to showcase identity, social presence, speaking exp
 - Upcoming talks with dark card styling, auto-moved to past when date passes
 - Past talks with embedded YouTube videos where available
 - Current entries:
+  - AISA PerthSEC (Nov 18, 2026) — Upcoming — Cybercrime Revenue Streams and Money Laundering Techniques
   - BSides Perth (Nov 13, 2026) — Upcoming — Dumpster Diving for AI Agent Data Leaks
   - CyberCon Melbourne (Oct 14, 2026) — Upcoming — Tracking Third-Party Data Theft Across the Dark Web
   - CyberCon Melbourne (Oct 15, 2026) — Upcoming — How AI Agents Are Leaking Your Secrets
