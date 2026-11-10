@@ -95,3 +95,11 @@ A record of key decisions made during planning, and the reasoning behind each.
 **Decision:** Collapse the horizontal nav into a hamburger button below 768px. The full link list is replaced by a button that toggles a vertical dropdown beneath the nav bar.
 
 **Why:** The five nav links wrapped or crowded the logo on narrow screens, looking convoluted. A burger reveals a tidy, full-width dropdown only when needed. Implementation is a tiny inline `onclick` toggle (no shared JS file) keeping the static-site simplicity. Includes `aria-expanded`, `aria-controls`, and `aria-label` for accessibility.
+
+---
+
+### 12. Web-sized images, metadata stripped
+
+**Decision:** Every image committed to `images/` is downsized before commit: max 1600px on the long edge for gallery and talk photos, 520px for the hero portrait. Images are re-encoded as sRGB JPEG with all EXIF (camera, date, GPS) removed.
+
+**Why:** The home page loaded a 1.9 MB, 3088×2316 hero photo into a 130px circle, which on a slow connection delayed first paint by many seconds; the Digital Nomad gallery shipped 2–5 MB per photo. Five of the originals also carried GPS coordinates. The hero now weighs ~87 KB and the gallery ~4.4 MB total (lazy-loaded) instead of ~28 MB. No build step exists, so resizing is done once at commit time.
